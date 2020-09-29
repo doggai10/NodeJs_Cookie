@@ -206,8 +206,7 @@ var app = http.createServer(function (request, response) {
       body = body + data;
     });
     request.on('end', function () {
-      var post = qs.parse(body);
-      // 이것은 매우 위험한 코드입니다. 현실에서는 쿠키가 아닌 세션 방법을 사용해야 합니다. 
+      var post = qs.parse(body); 
       if (post.email === 'egoing777@gmail.com' && post.password === '111111') {
         response.writeHead(302, {
           'Set-Cookie': [
